@@ -58,7 +58,7 @@ print ('Monk3:')
 print((1 - d.check(tree3,md.monk3)))
 print((1 - d.check(tree3,md.monk3test)))
 
-#
+# Mean errors when splitting training set into different sizes of validation sets
 fractions = [0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
 monk1Err, monk1Var = d.reducedErrorPrune(md.monk1, md.monk1test, md.attributes, fractions, 500)
 monk3Err, monk3Var = d.reducedErrorPrune(md.monk3, md.monk3test, md.attributes, fractions, 500)
