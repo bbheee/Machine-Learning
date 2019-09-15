@@ -62,14 +62,16 @@ print((1 - d.check(tree3,md.monk3test)))
 fractions = [0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
 monk1Err, monk1Var = d.reducedErrorPrune(md.monk1, md.monk1test, md.attributes, fractions, 500)
 monk3Err, monk3Var = d.reducedErrorPrune(md.monk3, md.monk3test, md.attributes, fractions, 500)
+monk1Dev = np.empty([6,1], dtype = float)
+monk3Dev = np.empty([6,1], dtype = float)
 for v in range(0,6):
-    monk1Var[v] = math.sqrt(monk1Var[1])
-    monk3Var[v] = math.sqrt(monk3Var[1])
+    monk1Dev[v] = math.sqrt(monk1Var[v])
+    monk3Dev[v] = math.sqrt(monk3Var[v])
 
 print('Monk1 Mean Error: ' + str(monk1Err))
-print('Monk1 Standard Deviation: ' + str(monk1Var))
+print('Monk1 Standard Deviation: ' + str(monk1Dev))
 print('Monk3 Mean Error: ' + str(monk3Err))
-print('Monk3 Standard Deviation: ' + str(monk3Var))
+print('Monk3 Standard Deviation: ' + str(monk3Dev))
 
 plt.figure(figsize=(7, 7))
 
